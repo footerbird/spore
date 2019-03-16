@@ -35,7 +35,7 @@ class Index_controller extends CI_Controller {
         
         $page = 1;//默认页码为1
         
-        $page_size = 2;//单页记录数
+        $page_size = 10;//单页记录数
         $offset = ($page-1)*$page_size;//偏移量
         
         switch($page){

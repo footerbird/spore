@@ -60,7 +60,7 @@ class Spider_controller extends CI_Controller {
             $array_chapter = explode(PHP_EOL,$article_chapter);
             foreach($array_chapter as $key => $chapter){
                 sleep(1);
-            		$html = file_get_contents('http:'.$chapter);
+            		$html = file_get_contents('https:'.trim($chapter));
             		$data = QueryList::Query($html,array(
             				'chapter_title' => array('.text-wrap > div > div.text-head > h3','text'),
             				'chapter_content' => array('.text-wrap > div > div.read-content.j_readContent','html'),

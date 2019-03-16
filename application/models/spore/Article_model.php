@@ -26,7 +26,7 @@ class Article_model extends CI_Model {
     public function get_articleList($article_type,$start,$length){
         if($article_type == ''){
             $sql = "select article_route,article_title,article_summary,thumb_path,article_type,article_score from article_info "
-                ." where status = 1 order by rand() limit ".$start.",".$length;
+                ." where status = 1  order by create_time desc limit ".$start.",".$length;
         }else{
             $sql = "select article_route,article_title,article_summary,thumb_path,article_type,article_score from article_info "
                 ." where status = 1 and article_type like '%".$article_type."%' order by create_time desc limit ".$start.",".$length;
